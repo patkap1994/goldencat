@@ -1,0 +1,23 @@
+.gallery {
+  text-align: center;
+
+  &__container {
+    margin-top: 4em;
+    margin-bottom: 4em;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 1em;
+
+    @include screen--large {
+      grid-template-columns: auto auto;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+    }
+  }
+
+  &__button {
+    display: inline-block;
+    margin: 0 auto;
+  }
+}

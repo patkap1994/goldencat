@@ -1,0 +1,17 @@
+//MEDIA QUERIES
+@mixin screen--v-large {
+  @media (max-width: #{$screen--v-large}) {
+    @content;
+  }
+}
+
+@mixin screen--large {
+  @media (max-width: #{$screen--large}) {
+    @content;
+  }
+}
+
+@mixin shadow($args...) {
+  -webkit-box-shadow: $args;
+  box-shadow: $args;
+}

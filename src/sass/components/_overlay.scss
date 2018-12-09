@@ -1,0 +1,136 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  height: 0;
+  right: 0;
+  left: 0;
+  z-index: 10000;
+  overflow-y: auto;
+  background: $secondary-color;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+
+  &.active {
+    height: 100%;
+  }
+
+  &.show {
+    .overlay {
+      &__btn {
+        opacity: 1;
+      }
+
+      &__header {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+
+      &__paragraph {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+
+      &__image {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+      }
+    }
+  }
+
+  &__container {
+    position: relative;
+    min-height: 100%;
+    width: 100%;
+    padding: 4em;
+  }
+
+  &__header {
+    margin: 0;
+    -webkit-transform: translateY(-100px);
+    transform: translateY(-100px);
+    opacity: 0;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &__image {
+    height: 645px;
+    opacity: 0;
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &__paragraph {
+    max-width: 50%;
+    opacity: 0;
+    -webkit-transform: translateX(-100px);
+    transform: translateX(-100px);
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+
+  &__btn {
+    position: absolute;
+    right: 1em;
+    top: 2.5em;
+    background: none;
+    font-size: 1.5em;
+    border: none;
+    color: $secondary-color;
+    background: $primary-color;
+    border-radius: 50%;
+    padding: 0.4em 0.6em;
+    @extend %shadow;
+    opacity: 0;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+
+    &:hover {
+      cursor: pointer;
+      background: $primary-accent;
+      -webkit-transition: background 0.2s ease-in-out;
+      transition: background 0.2s ease-in-out;
+    }
+  }
+
+  &__content-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 4em;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  height: 0;
+  right: 0;
+  left: 0;
+  z-index: 10000;
+  overflow-y: auto;
+  background: $secondary-color;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+  &.active {
+    height: 100%;
+  }
+}
