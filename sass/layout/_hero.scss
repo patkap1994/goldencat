@@ -1,0 +1,40 @@
+.hero {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  grid-column: 2/4;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+
+  &__text-content {
+    position: absolute;
+    max-width: 600px;
+    z-index: 2;
+  }
+
+  &__img {
+    margin-left: auto;
+    margin-right: 4em;
+    width: 670px;
+    height: 520px;
+    z-index: 1;
+
+    @include screen--v-large {
+      opacity: 0.4;
+    }
+  }
+
+  &__header {
+    margin-bottom: 0.2em;
+  }
+
+  &__buttons {
+    margin-top: 2em;
+    a:first-child {
+      margin-right: 30px;
+    }
+  }
+}

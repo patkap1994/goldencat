@@ -1,0 +1,32 @@
+.bar-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 1em 0;
+
+  &.active > .bar-btn__icon {
+    fill: $primary-accent;
+  }
+
+  &__paragraph {
+    margin-bottom: 0;
+  }
+
+  &__icon {
+    height: 35px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover > .bar-btn__icon {
+    fill: $primary-accent;
+  }
+}

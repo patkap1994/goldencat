@@ -1,0 +1,92 @@
+.tile {
+  @extend %shadow;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding: 2em 1.5em;
+  max-width: 250px;
+  overflow-x: hidden;
+  -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  transition: -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  background: $secondary-color;
+  -webkit-backface-visibility: hidden;
+
+  & > * {
+    transition: -webkit-transform 0.3s ease-in-out;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  }
+
+  &.slide-out {
+    z-index: 999;
+  }
+
+  &.slide-out > * {
+    -webkit-transform: translateX(600px);
+    transform: translateX(600px);
+    transition: -webkit-transform 0.3s ease-in-out;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  }
+
+  &.scale-up {
+    background: $secondary-color;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: scale(12);
+    transform: scale(12);
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+    transition: -webkit-transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+    z-index: 1000;
+  }
+
+  @include screen--large {
+    max-width: none;
+  }
+
+  &__img {
+    height: 75px;
+    width: 75px;
+    fill: $primary-accent;
+    -ms-flex-item-align: center;
+    align-self: center;
+
+    @include screen--large {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  &__header {
+    margin-bottom: 0;
+  }
+
+  &__paragraph {
+    padding-bottom: 2em;
+    border-bottom: 1px solid $primary-color;
+  }
+
+  &__link > .fas {
+    -webkit-transition: -webkit-transform 0.2s ease-in-out;
+    transition: -webkit-transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+  }
+
+  &__link:hover > .fas {
+    -webkit-transform: translate(10px);
+    transform: translate(10px);
+  }
+}

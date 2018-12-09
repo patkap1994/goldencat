@@ -1,0 +1,6 @@
+header {
+  display: grid;
+  grid-template-columns: minmax(4em, 1fr) minmax(300px, 1100px) 1fr;
+  padding-top: 5em;
+  margin: 0 auto;
+}

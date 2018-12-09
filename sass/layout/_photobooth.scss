@@ -1,0 +1,55 @@
+.photobooth {
+  &__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    @include screen--large {
+      position: relative;
+    }
+  }
+
+  &__text {
+    margin-left: 6em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    @include screen--large {
+      margin-left: 0;
+      max-width: 700px;
+    }
+  }
+
+  &__img {
+    height: 645px;
+
+    @include screen--large {
+      position: absolute;
+      opacity: 0.2;
+    }
+  }
+
+  &__header {
+    -ms-flex-item-align: start;
+    align-self: flex-start;
+
+    @include screen--large {
+      text-align: right;
+    }
+  }
+
+  &__paragraph {
+    margin-bottom: 4em;
+    text-align: justify;
+  }
+
+  &__button {
+    -ms-flex-item-align: center;
+    align-self: center;
+  }
+}
