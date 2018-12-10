@@ -3,10 +3,18 @@
 
   &--events {
     grid-column: 2/4;
+
+    @include screen--medium {
+      grid-column: 1/4;
+    }
   }
 
   &--how {
     grid-column: 1/3;
+
+    @include screen--medium {
+      grid-column: 1/4;
+    }
   }
 
   &--right {
