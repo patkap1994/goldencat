@@ -27,6 +27,8 @@
 
   &__img {
     height: 645px;
+    -webkit-animation: photobooth 10s infinite ease-in-out;
+    animation: photobooth 10s infinite ease-in-out;
 
     @include screen--large {
       position: absolute;
@@ -51,5 +53,35 @@
   &__button {
     -ms-flex-item-align: center;
     align-self: center;
+  }
+}
+
+@-webkit-keyframes photobooth {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes photobooth {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }

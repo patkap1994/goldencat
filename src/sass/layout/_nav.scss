@@ -10,8 +10,179 @@
   align-items: center;
   padding: 2em 4em;
 
+  &__hamburger {
+    height: 17px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    cursor: pointer;
+    display: none;
+    z-index: 9999999999;
+
+    @include screen--large {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+
+      .main-nav__logo-hamburger {
+        display: block;
+      }
+    }
+
+    .hamburger-line {
+      width: 35px;
+      height: 3px;
+      background: $primary-color;
+
+      &-one {
+        -webkit-transition: -webkit-transform 0.3s ease-in-out;
+        transition: -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+      }
+
+      &-two {
+        opacity: 1;
+        -webkit-transition: opacity 0.2s 0.2s ease-in-out;
+        transition: opacity 0.2s 0.2s ease-in-out;
+      }
+
+      &-three {
+        -webkit-transition: -webkit-transform 0.3s ease-in-out;
+        transition: -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+      }
+    }
+
+    &.active {
+      .hamburger-line {
+        &-one {
+          -webkit-transform: translateY(7px) rotateZ(135deg);
+          transform: translateY(7px) rotateZ(135deg);
+          -webkit-transition: -webkit-transform 0.3s ease-in-out;
+          transition: -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+        }
+        &-two {
+          opacity: 0;
+          -webkit-transition: none;
+          transition: none;
+        }
+        &-three {
+          -webkit-transform: translateY(-7px) rotateZ(45deg);
+          transform: translateY(-7px) rotateZ(45deg);
+          -webkit-transition: -webkit-transform 0.3s ease-in-out;
+          transition: -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+        }
+      }
+    }
+  }
+
   &__logo {
     display: inline-block;
+  }
+
+  &__logo-hamburger {
+    display: none;
   }
 
   &__list {
@@ -19,8 +190,45 @@
     display: -ms-flexbox;
     display: flex;
 
+    &.active {
+      visibility: visible;
+      opacity: 1;
+      height: 100%;
+      -webkit-transition: height 0.3s ease-in-out, opacity 0.2s ease-in-out;
+      transition: height 0.3s ease-in-out, opacity 0.2s ease-in-out;
+      min-height: 430px;
+
+      .main-nav__logo-hamburger {
+        display: block;
+      }
+    }
+
     @include screen--large {
-      display: none;
+      visibility: hidden;
+      opacity: 0;
+      height: 0;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: $secondary-color;
+      z-index: 9999999;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      font-size: 3rem;
+      margin: 0;
+      padding: 0;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
     }
 
     &-item {

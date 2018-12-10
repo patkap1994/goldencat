@@ -28,11 +28,14 @@
   }
 
   &__text {
-    width: 390px;
     margin-right: 2em;
+    width: 390px;
 
     @include screen--large {
-      width: 700px;
+      width: 100%;
+      max-width: 700px;
+      text-align: justify;
+      margin-right: 0;
     }
   }
 

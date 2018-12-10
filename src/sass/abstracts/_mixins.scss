@@ -11,6 +11,12 @@
   }
 }
 
+@mixin screen--medium {
+  @media (max-width: #{$screen--medium}) {
+    @content;
+  }
+}
+
 @mixin shadow($args...) {
   -webkit-box-shadow: $args;
   box-shadow: $args;

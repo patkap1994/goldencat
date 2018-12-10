@@ -8,11 +8,36 @@
     grid-template-columns: auto auto auto;
     grid-gap: 1em;
 
+    img {
+      @extend %shadow;
+      max-width: 100%;
+      -webkit-transition: -webkit-transform 0.3s ease-in-out;
+      transition: -webkit-transform 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out;
+      transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+      cursor: pointer;
+
+      &:nth-child(7),
+      &:nth-child(8),
+      &:nth-child(9) {
+        display: none;
+      }
+
+      &.show {
+        display: inline-block;
+      }
+
+      &:hover {
+        -webkit-transform: scale(1.03);
+        transform: scale(1.03);
+      }
+    }
+
     @include screen--large {
       grid-template-columns: auto auto;
       -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center;
+      -ms-flex-pack: center;
+      justify-content: center;
     }
   }
 
