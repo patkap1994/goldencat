@@ -4,10 +4,13 @@
   background-size: cover;
   padding: 4em;
 
+  @include screen--small {
+    padding: 4em 2em;
+  }
+
   &__tiles {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    @extend %flex;
+
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;

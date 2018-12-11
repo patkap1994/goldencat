@@ -1,12 +1,8 @@
 .tile {
   @extend %shadow;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  @extend %flex;
+  @extend %flex-column;
+
   padding: 2em 1.5em;
   max-width: 250px;
   overflow-x: hidden;
@@ -30,8 +26,8 @@
   }
 
   &.slide-out > * {
-    -webkit-transform: translateX(600px);
-    transform: translateX(600px);
+    @include transform(translateX(600px));
+
     transition: -webkit-transform 0.3s ease-in-out;
     -webkit-transition: -webkit-transform 0.3s ease-in-out;
     transition: transform 0.3s ease-in-out;
@@ -39,11 +35,11 @@
   }
 
   &.scale-up {
+    @include transform(scale(12));
+
     background: $secondary-color;
     -webkit-transform-origin: center;
     transform-origin: center;
-    -webkit-transform: scale(12);
-    transform: scale(12);
     -webkit-transition: -webkit-transform 0.5s ease-in-out;
     transition: -webkit-transform 0.5s ease-in-out;
     transition: transform 0.5s ease-in-out;
@@ -86,7 +82,6 @@
   }
 
   &__link:hover > .fas {
-    -webkit-transform: translate(10px);
-    transform: translate(10px);
+    @include transform(translate(10px));
   }
 }

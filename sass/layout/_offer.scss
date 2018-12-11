@@ -1,6 +1,16 @@
 .offer {
   padding: 0 4em;
 
+  @include screen--small {
+    padding: 0 2em;
+  }
+
+  h2 {
+    @include screen--small {
+      text-align: center;
+    }
+  }
+
   &__boxes {
     margin-top: 4em;
     display: grid;

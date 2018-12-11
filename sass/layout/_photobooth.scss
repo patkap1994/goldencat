@@ -1,8 +1,6 @@
 .photobooth {
   &__container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    @extend %flex;
 
     @include screen--large {
       position: relative;
@@ -10,14 +8,10 @@
   }
 
   &__text {
+    @extend %flex;
+    @extend %flex-column;
+
     margin-left: 6em;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
 
     @include screen--large {
       margin-left: 0;
@@ -34,6 +28,10 @@
       position: absolute;
       opacity: 0.2;
     }
+
+    @include screen--medium {
+      display: none;
+    }
   }
 
   &__header {
@@ -42,6 +40,10 @@
 
     @include screen--large {
       text-align: right;
+    }
+
+    @include screen--small {
+      text-align: center;
     }
   }
 
@@ -58,30 +60,24 @@
 
 @-webkit-keyframes photobooth {
   0% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    @include transform(translateY(0));
   }
   50% {
-    -webkit-transform: translateY(20px);
-            transform: translateY(20px);
+    @include transform(translateY(20px));
   }
   100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    @include transform(translateY(0));
   }
 }
 
 @keyframes photobooth {
   0% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    @include transform(translateY(0));
   }
   50% {
-    -webkit-transform: translateY(20px);
-            transform: translateY(20px);
+    @include transform(translateY(20px));
   }
   100% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    @include transform(translateY(0));
   }
 }
