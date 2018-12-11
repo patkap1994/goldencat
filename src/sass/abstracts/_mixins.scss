@@ -17,7 +17,30 @@
   }
 }
 
+@mixin screen--small {
+  @media (max-width: #{$screen--small}) {
+    @content;
+  }
+}
+
+@mixin screen--v-small {
+  @media (max-width: #{$screen--v-small}) {
+    @content;
+  }
+}
+
 @mixin shadow($args...) {
   -webkit-box-shadow: $args;
   box-shadow: $args;
+}
+
+@mixin grid($x, $y) {
+  display: grid;
+  grid-template-columns: $x;
+  grid-template-rows: $y;
+}
+
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+  transform: $transform;
 }

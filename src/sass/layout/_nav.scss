@@ -1,39 +1,122 @@
 .main-nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+  @extend %flex;
+  @extend %flex-align;
+
   padding: 2em 4em;
 
+  @include screen--small {
+    padding: 2em;
+  }
+
+  &__logo {
+    margin-right: auto;
+
+    @include screen--small {
+      width: 200px;
+    }
+  }
+
+  &__list {
+    @extend %flex;
+
+    &-item {
+      margin: 0 2.5em;
+
+      a {
+        @extend %relative;
+
+        &:hover::after {
+          width: 100%;
+        }
+
+        &::after {
+          @extend %absolute;
+
+          display: block;
+          content: '';
+          background: $primary-accent;
+          width: 0;
+          height: 3px;
+          top: 100%;
+          left: 0;
+          -webkit-transition: width 0.2s ease-in-out;
+          transition: width 0.2s ease-in-out;
+        }
+      }
+    }
+
+    @include screen--large {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      height: 0;
+      background: $secondary-color;
+      z-index: 10;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      font-size: 4rem;
+      margin: 0;
+      padding: 0;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    &.active {
+      @extend %flex;
+      min-height: 430px;
+
+      .main-nav__logo-hamburger {
+        display: block;
+      }
+
+      &.show {
+        @extend %full-opacity;
+
+        height: 100%;
+        -webkit-transition: height 0.3s ease-in-out, opacity 0.2s ease-in-out;
+        transition: height 0.3s ease-in-out, opacity 0.2s ease-in-out;
+
+        .main-nav__logo-hamburger {
+          @extend %full-opacity;
+        }
+      }
+    }
+  }
+
+  &__logo-hamburger {
+    @extend %no-opacity;
+
+    display: none;
+    -webkit-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
+  }
+
   &__hamburger {
+    @extend %flex-column;
+
     height: 17px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
     cursor: pointer;
     display: none;
-    z-index: 9999999999;
+    z-index: 9999;
 
     @include screen--large {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-
-      .main-nav__logo-hamburger {
-        display: block;
-      }
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
     }
 
     .hamburger-line {
@@ -50,28 +133,11 @@
           -webkit-transform 0.3s ease-in-out;
         transition: transform 0.3s ease-in-out,
           -webkit-transform 0.3s ease-in-out;
-        transition: transform 0.3s ease-in-out,
-          -webkit-transform 0.3s ease-in-out;
-        transition: transform 0.3s ease-in-out,
-          -webkit-transform 0.3s ease-in-out;
-        transition: transform 0.3s ease-in-out,
-          -webkit-transform 0.3s ease-in-out;
-        transition: transform 0.3s ease-in-out,
-          -webkit-transform 0.3s ease-in-out;
-        transition: transform 0.3s ease-in-out,
-          -webkit-transform 0.3s ease-in-out;
-        transition: transform 0.3s ease-in-out,
-          -webkit-transform 0.3s ease-in-out;
-        transition: transform 0.3s ease-in-out,
-          -webkit-transform 0.3s ease-in-out;
-        transition: transform 0.3s ease-in-out,
-          -webkit-transform 0.3s ease-in-out;
-        transition: transform 0.3s ease-in-out,
-          -webkit-transform 0.3s ease-in-out;
       }
 
       &-two {
-        opacity: 1;
+        @extend %full-opacity;
+
         -webkit-transition: opacity 0.2s 0.2s ease-in-out;
         transition: opacity 0.2s 0.2s ease-in-out;
       }
@@ -85,32 +151,14 @@
           -webkit-transform 0.3s ease-in-out;
         transition: transform 0.3s ease-in-out,
           -webkit-transform 0.3s ease-in-out;
-        transition: transform 0.3s ease-in-out,
-          -webkit-transform 0.3s ease-in-out;
-        transition: transform 0.3s ease-in-out,
-          -webkit-transform 0.3s ease-in-out;
-        transition: transform 0.3s ease-in-out,
-          -webkit-transform 0.3s ease-in-out;
-        transition: transform 0.3s ease-in-out,
-          -webkit-transform 0.3s ease-in-out;
-        transition: transform 0.3s ease-in-out,
-          -webkit-transform 0.3s ease-in-out;
-        transition: transform 0.3s ease-in-out,
-          -webkit-transform 0.3s ease-in-out;
-        transition: transform 0.3s ease-in-out,
-          -webkit-transform 0.3s ease-in-out;
-        transition: transform 0.3s ease-in-out,
-          -webkit-transform 0.3s ease-in-out;
-        transition: transform 0.3s ease-in-out,
-          -webkit-transform 0.3s ease-in-out;
       }
     }
 
     &.active {
       .hamburger-line {
         &-one {
-          -webkit-transform: translateY(7px) rotateZ(135deg);
-          transform: translateY(7px) rotateZ(135deg);
+          @include transform(translateY(7px) rotateZ(135deg));
+
           -webkit-transition: -webkit-transform 0.3s ease-in-out;
           transition: -webkit-transform 0.3s ease-in-out;
           transition: transform 0.3s ease-in-out;
@@ -119,33 +167,18 @@
             -webkit-transform 0.3s ease-in-out;
           transition: transform 0.3s ease-in-out,
             -webkit-transform 0.3s ease-in-out;
-          transition: transform 0.3s ease-in-out,
-            -webkit-transform 0.3s ease-in-out;
-          transition: transform 0.3s ease-in-out,
-            -webkit-transform 0.3s ease-in-out;
-          transition: transform 0.3s ease-in-out,
-            -webkit-transform 0.3s ease-in-out;
-          transition: transform 0.3s ease-in-out,
-            -webkit-transform 0.3s ease-in-out;
-          transition: transform 0.3s ease-in-out,
-            -webkit-transform 0.3s ease-in-out;
-          transition: transform 0.3s ease-in-out,
-            -webkit-transform 0.3s ease-in-out;
-          transition: transform 0.3s ease-in-out,
-            -webkit-transform 0.3s ease-in-out;
-          transition: transform 0.3s ease-in-out,
-            -webkit-transform 0.3s ease-in-out;
-          transition: transform 0.3s ease-in-out,
-            -webkit-transform 0.3s ease-in-out;
         }
+
         &-two {
-          opacity: 0;
+          @extend %no-opacity;
+
           -webkit-transition: none;
           transition: none;
         }
+
         &-three {
-          -webkit-transform: translateY(-7px) rotateZ(45deg);
-          transform: translateY(-7px) rotateZ(45deg);
+          @include transform(translateY(-7px) rotateZ(45deg));
+
           -webkit-transition: -webkit-transform 0.3s ease-in-out;
           transition: -webkit-transform 0.3s ease-in-out;
           transition: transform 0.3s ease-in-out;
@@ -154,104 +187,6 @@
             -webkit-transform 0.3s ease-in-out;
           transition: transform 0.3s ease-in-out,
             -webkit-transform 0.3s ease-in-out;
-          transition: transform 0.3s ease-in-out,
-            -webkit-transform 0.3s ease-in-out;
-          transition: transform 0.3s ease-in-out,
-            -webkit-transform 0.3s ease-in-out;
-          transition: transform 0.3s ease-in-out,
-            -webkit-transform 0.3s ease-in-out;
-          transition: transform 0.3s ease-in-out,
-            -webkit-transform 0.3s ease-in-out;
-          transition: transform 0.3s ease-in-out,
-            -webkit-transform 0.3s ease-in-out;
-          transition: transform 0.3s ease-in-out,
-            -webkit-transform 0.3s ease-in-out;
-          transition: transform 0.3s ease-in-out,
-            -webkit-transform 0.3s ease-in-out;
-          transition: transform 0.3s ease-in-out,
-            -webkit-transform 0.3s ease-in-out;
-          transition: transform 0.3s ease-in-out,
-            -webkit-transform 0.3s ease-in-out;
-        }
-      }
-    }
-  }
-
-  &__logo {
-    display: inline-block;
-  }
-
-  &__logo-hamburger {
-    display: none;
-  }
-
-  &__list {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-
-    &.active {
-      visibility: visible;
-      opacity: 1;
-      height: 100%;
-      -webkit-transition: height 0.3s ease-in-out, opacity 0.2s ease-in-out;
-      transition: height 0.3s ease-in-out, opacity 0.2s ease-in-out;
-      min-height: 430px;
-
-      .main-nav__logo-hamburger {
-        display: block;
-      }
-    }
-
-    @include screen--large {
-      visibility: hidden;
-      opacity: 0;
-      height: 0;
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: $secondary-color;
-      z-index: 9999999;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      font-size: 3rem;
-      margin: 0;
-      padding: 0;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      -webkit-transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-      transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    }
-
-    &-item {
-      margin: 0 2.5em;
-
-      a {
-        position: relative;
-
-        &:hover::after {
-          width: 100%;
-        }
-
-        &::after {
-          display: block;
-          content: '';
-          background: $primary-accent;
-          width: 0;
-          height: 3px;
-          position: absolute;
-          top: 100%;
-          left: 0;
-          -webkit-transition: width 0.2s ease-in-out;
-          transition: width 0.2s ease-in-out;
         }
       }
     }

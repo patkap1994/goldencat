@@ -1,32 +1,32 @@
+%line {
+  position: absolute;
+  display: block;
+  content: '';
+  background: $primary-accent;
+  height: 3px;
+  width: 2000px;
+  top: 33px;
+}
+
 .line--left {
-  position: relative;
+  @extend %relative;
 
   &::after {
-    display: block;
-    margin-right: 15px;
-    content: '';
-    position: absolute;
-    background: $primary-accent;
-    height: 3px;
-    width: 2000px;
+    @extend %line;
+
     right: 100%;
-    top: 33px;
+    margin-right: 15px;
   }
 }
 
 .line--right {
-  position: relative;
+  @extend %relative;
 
   &::before {
-    display: block;
-    margin-left: 15px;
-    content: '';
-    position: absolute;
-    background: $primary-accent;
-    height: 3px;
-    width: 2000px;
+    @extend %line;
+
     left: 100%;
-    top: 33px;
+    margin-left: 15px;
   }
 }
 

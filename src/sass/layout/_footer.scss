@@ -1,10 +1,7 @@
 footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  @extend %flex;
+  @extend %flex-justify;
+
   padding-top: 4em;
 
   .footer__logo {

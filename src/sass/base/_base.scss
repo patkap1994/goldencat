@@ -8,12 +8,21 @@
 html {
   font-family: $karla;
   font-size: 16px;
+
+  @include screen--medium {
+    font-size: 14px;
+  }
+
+  @include screen--small {
+    font-size: 13px;
+  }
 }
 
 html,
 body {
   height: 100%;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 ul {
@@ -38,13 +47,10 @@ a {
 }
 
 .header--centered {
+  @extend %flex;
+  @extend %flex-justify;
+
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
   padding: 0 4em;
 }
 
@@ -54,6 +60,10 @@ a {
 
 .section-padding {
   padding: 0 4em;
+
+  @include screen--small {
+    padding: 0 2em;
+  }
 }
 
 .section-padding--around {
@@ -62,6 +72,10 @@ a {
   @include screen--large {
     padding: 7em 4em;
   }
+
+  @include screen--small {
+    padding: 5em 2em;
+  }
 }
 
 .section-padding--vertical {
@@ -69,5 +83,9 @@ a {
 
   @include screen--large {
     padding: 7em 0;
+  }
+
+  @include screen--small {
+    padding: 5em 0;
   }
 }

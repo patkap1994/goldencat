@@ -1,10 +1,15 @@
 .how-card {
-  position: relative;
+  @extend %relative;
+
   background: url('./../img/pattern-grey.png');
   background-size: cover;
   background-repeat: no-repeat;
   padding: 6em 4em;
   margin-top: 3em;
+
+  @include screen--small {
+    padding: 4em 2em;
+  }
 
   &__container {
     display: none;
@@ -15,38 +20,31 @@
 
     &.show {
       .how-card__header {
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-        opacity: 1;
+        @include transform(translateY(0));
+        @extend %full-opacity;
       }
 
       .left {
-        -webkit-transform: translateX(0);
-        transform: translateX(0);
-        opacity: 1;
+        @extend %how-card-transition;
       }
 
       .right {
-        -webkit-transform: translateX(0);
-        transform: translateX(0);
-        opacity: 1;
+        @extend %how-card-transition;
       }
 
       .light-background {
-        -webkit-transform: translateX(0);
-        transform: translateX(0);
-        opacity: 1;
+        @extend %how-card-transition;
       }
     }
   }
 
   &__arrow {
+    @include transform(rotateZ(45deg));
+    @extend %absolute;
+
     display: block;
-    position: absolute;
     height: 60px;
     width: 60px;
-    -webkit-transform: rotateZ(45deg);
-    transform: rotateZ(45deg);
     background: $primary-color;
     left: 210px;
     top: -30px;
@@ -54,38 +52,41 @@
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     -webkit-backface-visibility: hidden;
+
+    @include screen--small {
+      display: none;
+    }
   }
 
   &__header {
+    @include transform(translateY(-100px));
+    @extend %no-opacity;
+
     text-align: center;
     margin-top: 0;
-    -webkit-transform: translateY(-100px);
-    transform: translateY(-100px);
-    opacity: 0;
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
   }
 
   &__grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 2fr;
-    grid-template-rows: 1fr 3fr auto;
+    @include grid(2fr 1fr 2fr, 1fr 3fr auto);
 
     @include screen--large {
-      grid-template-columns: 1fr;
-      grid-template-rows: auto auto;
+      @include grid(1fr, auto auto);
+
       grid-row-gap: 2em;
     }
 
     .left {
+      @extend %relative;
+      @extend %no-opacity;
+      @include transform(translateX(-100px));
+
       grid-row: 2/4;
       grid-column: 1/2;
       z-index: 2;
       padding: 2em;
       margin: 0;
-      -webkit-transform: translateX(-100px);
-      transform: translateX(-100px);
-      opacity: 0;
       -webkit-transition: all 0.5s ease-in-out;
       transition: all 0.5s ease-in-out;
 
@@ -96,14 +97,14 @@
     }
 
     .right {
+      @include transform(translateX(100px));
+      @extend %no-opacity;
+
       grid-row: 1/3;
       grid-column: 2/4;
       display: inline-block;
       max-width: 100%;
       z-index: 3;
-      -webkit-transform: translateX(100px);
-      transform: translateX(100px);
-      opacity: 0;
       -webkit-transition: all 0.5s ease-in-out;
       transition: all 0.5s ease-in-out;
 
@@ -111,19 +112,20 @@
         grid-row: 1/2;
         grid-column: 1/2;
         margin: 0 auto;
-        min-width: 100%;
+        width: 100%;
+        max-width: 600px;
       }
     }
 
     .light-background {
+      @include transform(translateX(-100px));
+      @extend %no-opacity;
+
       background: $secondary-color;
       grid-column: 1/3;
       grid-row: 2/4;
       border-radius: 10px;
       z-index: 1;
-      -webkit-transform: translateX(-100px);
-      transform: translateX(-100px);
-      opacity: 0;
       -webkit-transition: all 0.5s ease-in-out;
       transition: all 0.5s ease-in-out;
     }

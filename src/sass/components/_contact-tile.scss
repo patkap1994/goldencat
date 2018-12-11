@@ -1,14 +1,23 @@
 .contact-tile {
+  @include shadow(0px 0px 30px rgba(0, 0, 0, 0.7));
+
   background: $secondary-color;
   padding: 6em 3em;
   text-align: center;
   width: 480px;
-  -webkit-box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.7);
-  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.7);
   border-radius: 10px;
+
+  @include screen--small {
+    width: 100%;
+    padding: 3em 2em;
+  }
 
   &__paragraph {
     margin: 3em 0;
+
+    @include screen--small {
+      margin: 2em 0;
+    }
   }
 
   &__logo {

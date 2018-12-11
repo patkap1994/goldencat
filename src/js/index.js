@@ -1,55 +1,109 @@
+//NAV HAMBURGER
+const hamburgerBtn = document.querySelector('.main-nav__hamburger');
+const hamburgerList = document.querySelector('.main-nav__list');
+const navOverlay = document.querySelector('.nav-overlay');
+const navOverlayHeader = navOverlay.querySelector('.nav-overlay__header');
+
+let hamburgerMenuOpened = false;
+
+hamburgerBtn.addEventListener('click', ()=>{
+  hamburgerBtn.classList.toggle('active');
+  hamburgerMenuOpened = !hamburgerMenuOpened;
+  toggleMenu();
+});
+
+function toggleMenu() {
+  if(hamburgerMenuOpened) {
+    hamburgerList.classList.add('active');
+
+    setTimeout(()=>{
+      hamburgerList.classList.add('show');
+    }, 100);
+  } else {
+    hamburgerList.classList.remove('show');
+
+    setTimeout(()=>{
+      hamburgerList.classList.remove('active');
+    },300);
+  }
+}
+
+
+//SCROLLING TO SECTIONS WITH NAV LINKS
+document.querySelectorAll('a').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    if(e.target.dataset.navtext){
+      if (hamburgerMenuOpened) {
+        document.querySelector(this.getAttribute('href')).scrollIntoView();
+        hamburgerMenuOpened = !hamburgerMenuOpened;
+        hamburgerList.classList.remove('show');
+
+        setTimeout(()=>{
+          hamburgerBtn.classList.remove('active');
+          hamburgerList.classList.remove('active');
+        },300);
+
+      } else {
+      navOverlay.classList.add('active');
+      navOverlayHeader.innerText = '';
+
+      navOverlay.addEventListener('transitionend', ()=>{
+        navOverlayHeader.innerText = e.target.dataset.navtext;
+      });
+
+      setTimeout(()=>{
+        document.querySelector(this.getAttribute('href')).scrollIntoView();
+        navOverlay.classList.remove('active');
+        navOverlayHeader.innerText = '';
+      }, 1000);}
+  }
+});
+});
+
+
 //CARDS
 const cards = document.querySelectorAll('.bar-btn');
 const arrow = document.querySelector('.how-card__arrow');
 const cardContainers = document.querySelectorAll('.how-card__container');
+
 const halfOfArrow = arrow.clientWidth / 2;
+let current = cards[0];
 
-window.addEventListener('load', ()=>{
-  const current = cards[0];
-  current.classList.add('active');
-
-  moveArrow(current);
-});
-
-window.addEventListener('resize', ()=>{
-  let current;
-  cards.forEach((card)=>{
-    if(card.classList.contains('active')) {
-      current = card;
-    }
-  });
-  moveArrow(current);
-});
+window.addEventListener('load', moveArrow);
+window.addEventListener('resize', moveArrow);
 
 cards.forEach((card)=>{
-  card.addEventListener('click', (e) => { 
-    cards.forEach((card)=>{
-      card.classList.remove('active');
-    });
-
-    cardContainers.forEach((container)=>{
-      container.classList.remove('active');
-      container.classList.remove('show');
-    });
-
-    e.preventDefault();
-    const current = e.currentTarget;
-    const currentCard = e.currentTarget.dataset.numberOfCard;
-    console.log(currentCard);
-
-    current.classList.add('active');
-    moveArrow(current);
-
-    cardContainers[currentCard].classList.add('active');
-
-    setTimeout(()=>{
-      cardContainers[currentCard].classList.add('show');
-    }, 100);
-
-  });
+  card.addEventListener('click', changeCard);
 });
 
-const moveArrow = (current) => {
+function changeCard(e) {
+  e.preventDefault();
+  
+  current = e.currentTarget;
+  let currentCardNumber = current.dataset.numberOfCard;
+  
+  cards.forEach((card)=>{
+    card.classList.remove('active');
+  });
+
+  current.classList.add('active');
+
+  cardContainers.forEach((container)=>{
+    container.classList.remove('active');
+    container.classList.remove('show');
+  });
+
+  cardContainers[currentCardNumber].classList.add('active');
+
+  setTimeout(()=>{
+    cardContainers[currentCardNumber].classList.add('show');
+  }, 100);
+
+  moveArrow();
+}
+
+function moveArrow() {
   const middleOfCard = (current.offsetLeft + current.clientWidth / 2);
   arrow.style.left = `${middleOfCard - halfOfArrow}px`;
 }
@@ -59,28 +113,31 @@ const moveArrow = (current) => {
 const boxes = document.querySelectorAll('.box');
 
 boxes.forEach((box)=>{
-  box.addEventListener('mouseout', (e)=> {
-    boxes.forEach((box)=>{
-      box.classList.remove('active');
-      if(e.relatedTarget != box) {
-        boxes[1].classList.add('active');
-      }
-    });
+  box.addEventListener('mouseover', scaleBox);
+  box.addEventListener('mouseout', scaleMiddleBox);
+})
+
+function scaleBox(e) {
+  boxes.forEach(box=>{
+    box.classList.remove('active');
   });
 
-  box.addEventListener('mouseover', (e)=> {
-    boxes.forEach((box)=>{
-      box.classList.remove('active');
-      e.currentTarget.classList.add('active');
-    });
-  });
-});
+  e.currentTarget.classList.add('active');
+}
 
+function scaleMiddleBox() {
+  boxes.forEach(box=>{
+    box.classList.remove('active');
+  });
+
+  boxes[1].classList.add('active');
+}
 
 //WHY US TILES
 const tiles = document.querySelectorAll('.tile');
-const overlay = document.querySelectorAll('.overlay');
 const closeBtn = document.querySelectorAll('.overlay__btn');
+const overlay = document.querySelector('.overlay');
+const overlayContainer = document.querySelectorAll('.overlay__container');
 
 tiles.forEach((tile)=>{
   tile.addEventListener('click', openWindow);
@@ -100,22 +157,23 @@ function openWindow(e) {
       document.body.style.overflow = 'hidden';
       this.classList.add('scale-up');
       setTimeout(()=>{
-        overlay[overlayNumber].classList.add('active');
+        overlay.classList.add('active');
       }, 500);
       setTimeout(()=>{
-        overlay[overlayNumber].classList.add('show');
-      }, 900);
+        overlayContainer[overlayNumber].classList.add('show');
+      }, 700);
     }, 300);
   } 
 }
 
 function closeWindow() {
-  const currentOverlay = this.parentNode.parentNode.parentNode;
-  currentOverlay.classList.remove('show');
+  const currentOverlayContainer = this.parentNode.parentNode;
+
+  currentOverlayContainer.classList.remove('show');
 
   setTimeout(()=>{
+    overlay.classList.remove('active');
     tiles.forEach((tile)=>{
-      currentOverlay.classList.remove('active');
       setTimeout(()=>{
         if(tile.classList.contains('scale-up')){
           tile.classList.remove('scale-up');
@@ -129,45 +187,6 @@ function closeWindow() {
   }, 500);  
 }
 
-
-
-//NAV 
-const hamburgerBtn = document.querySelector('.main-nav__hamburger');
-const navOverlay = document.querySelector('.nav-overlay');
-const navOverlayHeader = navOverlay.querySelector('.nav-overlay__header');
-const hamburgerList = document.querySelector('.main-nav__list');
-
-hamburgerBtn.addEventListener('click', ()=>{
-  hamburgerBtn.classList.toggle('active');
-  hamburgerList.classList.toggle('active');
-});
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-      if(e.target.classList.contains('btn--tiles') || e.target.classList.contains('gallery__button')){
-        return;
-      } else if (e.target.parentNode.parentNode.classList.contains('active')) {
-        setTimeout(()=>{
-          document.querySelector(this.getAttribute('href')).scrollIntoView();
-          e.target.parentNode.parentNode.classList.remove('active');
-          hamburgerBtn.classList.remove('active');
-        }, 200)
-      } else {
-      navOverlay.classList.add('active');
-      navOverlayHeader.innerText = '';
-
-      navOverlay.addEventListener('transitionend', ()=>{
-        navOverlayHeader.innerText = e.target.dataset.navtext;
-      });
-
-      setTimeout(()=>{
-        document.querySelector(this.getAttribute('href')).scrollIntoView();
-        navOverlay.classList.remove('active');
-        navOverlayHeader.innerText = '';
-      }, 1000);}
-  });
-});
 
 //PHOTO GALLERY
 const photos = document.querySelectorAll('.gallery__container img');

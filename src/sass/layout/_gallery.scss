@@ -28,13 +28,33 @@
       }
 
       &:hover {
-        -webkit-transform: scale(1.03);
-        transform: scale(1.03);
+        @include transform(scale(1.03));
+      }
+
+      @include screen--medium {
+        &:nth-child(4),
+        &:nth-child(5),
+        &:nth-child(6),
+        &:nth-child(7),
+        &:nth-child(8),
+        &:nth-child(9) {
+          display: none;
+        }
+        &.show {
+          display: inline-block;
+        }
       }
     }
 
     @include screen--large {
       grid-template-columns: auto auto;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+
+    @include screen--medium {
+      grid-template-columns: auto;
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center;
