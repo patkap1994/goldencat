@@ -6,6 +6,7 @@ header {
 
   @include screen--medium {
     grid-template-columns: 4em 1fr 4em;
+    position: relative;
   }
 
   @include screen--small {

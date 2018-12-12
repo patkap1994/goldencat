@@ -70,11 +70,11 @@ a {
   padding: 14em 4em;
 
   @include screen--large {
-    padding: 7em 4em;
+    padding: 10em 4em;
   }
 
   @include screen--small {
-    padding: 5em 2em;
+    padding: 8em 2em;
   }
 }
 
@@ -82,10 +82,10 @@ a {
   padding: 14em 0;
 
   @include screen--large {
-    padding: 7em 0;
+    padding: 10em 0;
   }
 
   @include screen--small {
-    padding: 5em 0;
+    padding: 8em 0;
   }
 }
