@@ -11,8 +11,17 @@
   &__logo {
     margin-right: auto;
 
+    &--no-text {
+      display: none;
+      margin-right: auto;
+
+      @include screen--small {
+        display: block;
+      }
+    }
+
     @include screen--small {
-      width: 200px;
+      display: none;
     }
   }
 
@@ -46,12 +55,13 @@
     }
 
     @include screen--large {
-      display: none;
-      position: absolute;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      position: fixed;
       top: 0;
       left: 0;
       right: 0;
-      opacity: 0;
       height: 0;
       background: $secondary-color;
       z-index: 10;
@@ -70,36 +80,26 @@
       align-items: center;
       -webkit-transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
       transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
     }
 
-    &.active {
-      @extend %flex;
-      min-height: 430px;
+    &.show {
+      @extend %full-opacity;
+
+      height: 100%;
+      -webkit-transition: height 0.3s ease-in-out;
+      transition: height 0.3s ease-in-out;
 
       .main-nav__logo-hamburger {
         display: block;
-      }
-
-      &.show {
-        @extend %full-opacity;
-
-        height: 100%;
-        -webkit-transition: height 0.3s ease-in-out, opacity 0.2s ease-in-out;
-        transition: height 0.3s ease-in-out, opacity 0.2s ease-in-out;
-
-        .main-nav__logo-hamburger {
-          @extend %full-opacity;
-        }
       }
     }
   }
 
   &__logo-hamburger {
-    @extend %no-opacity;
-
     display: none;
-    -webkit-transition: opacity 0.3s ease-in-out;
-    transition: opacity 0.3s ease-in-out;
+    height: 85px;
   }
 
   &__hamburger {
@@ -133,6 +133,86 @@
           -webkit-transform 0.3s ease-in-out;
         transition: transform 0.3s ease-in-out,
           -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
       }
 
       &-two {
@@ -151,10 +231,97 @@
           -webkit-transform 0.3s ease-in-out;
         transition: transform 0.3s ease-in-out,
           -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out,
+          -webkit-transform 0.3s ease-in-out;
       }
     }
 
     &.active {
+      position: fixed;
+      right: 4em;
+
+      @include screen--small {
+        right: 2em;
+      }
+
       .hamburger-line {
         &-one {
           @include transform(translateY(7px) rotateZ(135deg));
@@ -163,6 +330,86 @@
           transition: -webkit-transform 0.3s ease-in-out;
           transition: transform 0.3s ease-in-out;
           transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
           transition: transform 0.3s ease-in-out,
             -webkit-transform 0.3s ease-in-out;
           transition: transform 0.3s ease-in-out,
@@ -183,6 +430,86 @@
           transition: -webkit-transform 0.3s ease-in-out;
           transition: transform 0.3s ease-in-out;
           transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
+          transition: transform 0.3s ease-in-out,
+            -webkit-transform 0.3s ease-in-out;
           transition: transform 0.3s ease-in-out,
             -webkit-transform 0.3s ease-in-out;
           transition: transform 0.3s ease-in-out,

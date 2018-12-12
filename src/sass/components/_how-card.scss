@@ -72,7 +72,10 @@
     @include grid(2fr 1fr 2fr, 1fr 3fr auto);
 
     @include screen--large {
-      @include grid(1fr, auto auto);
+      @include grid(minmax(200px, 700px), auto auto);
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
 
       grid-row-gap: 2em;
     }

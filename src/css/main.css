@@ -3,7 +3,7 @@
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
 }
 
-.header--centered, .bar-wrapper, .tile, .bar-btn, .box, .overlay, .overlay__container, .overlay__content-container, .nav-overlay, .gallery-overlay__container, .main-nav, .main-nav__list, .main-nav__list.active, .hero, .photobooth__container, .photobooth__text, .why__container, .contact__tiles, footer {
+.header--centered, .bar-wrapper, .tile, .bar-btn, .box, .overlay, .overlay__container, .overlay__content-container, .nav-overlay, .gallery-overlay__container, .main-nav, .main-nav__list, .hero, .photobooth__container, .photobooth__text, .why__container, .contact__tiles, footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -51,11 +51,11 @@
   position: relative;
 }
 
-.how-card__container.show .how-card__header, .box.active .box__header, .box.active .box__list, .box.active .box__button, .overlay__container.show .overlay__btn, .overlay__container.show .overlay__header, .overlay__container.show .overlay__paragraph, .overlay__container.show .overlay__image, .gallery-overlay.active.show, .main-nav__list.active.show, .main-nav__list.active.show .main-nav__logo-hamburger, .main-nav__hamburger .hamburger-line-two {
+.how-card__container.show .how-card__header, .box.active .box__header, .box.active .box__list, .box.active .box__button, .overlay__container.show .overlay__btn, .overlay__container.show .overlay__header, .overlay__container.show .overlay__paragraph, .overlay__container.show .overlay__image, .gallery-overlay.active.show, .main-nav__list.show, .main-nav__hamburger .hamburger-line-two {
   opacity: 1;
 }
 
-.how-card__header, .how-card__grid .left, .how-card__grid .right, .how-card__grid .light-background, .overlay__header, .overlay__image, .overlay__paragraph, .overlay__btn, .gallery-overlay, .main-nav__logo-hamburger, .main-nav__hamburger.active .hamburger-line-two {
+.how-card__header, .how-card__grid .left, .how-card__grid .right, .how-card__grid .light-background, .overlay__header, .overlay__image, .overlay__paragraph, .overlay__btn, .gallery-overlay, .main-nav__hamburger.active .hamburger-line-two {
   opacity: 0;
 }
 
@@ -103,7 +103,7 @@ a {
   margin: 0 auto;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .wrapper {
     max-width: 900px;
   }
@@ -136,15 +136,15 @@ a {
   padding: 14em 4em;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .section-padding--around {
-    padding: 7em 4em;
+    padding: 10em 4em;
   }
 }
 
 @media (max-width: 550px) {
   .section-padding--around {
-    padding: 5em 2em;
+    padding: 8em 2em;
   }
 }
 
@@ -152,15 +152,15 @@ a {
   padding: 14em 0;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .section-padding--vertical {
-    padding: 7em 0;
+    padding: 10em 0;
   }
 }
 
 @media (max-width: 550px) {
   .section-padding--vertical {
-    padding: 5em 0;
+    padding: 8em 0;
   }
 }
 
@@ -184,6 +184,12 @@ a {
   font-size: 4rem;
 }
 
+@media (max-width: 850px) {
+  .header-font--v-large {
+    font-size: 3.7rem;
+  }
+}
+
 @media (max-width: 450px) {
   .header-font--v-large {
     font-size: 3.5rem;
@@ -192,6 +198,7 @@ a {
 
 .header-font--large {
   font-size: 3.5rem;
+  margin-top: 0;
 }
 
 @media (max-width: 450px) {
@@ -296,8 +303,11 @@ textarea {
   }
 }
 
-@media (max-width: 550px) {
-  .bar--events {
+@media (max-width: 450px) {
+  .bar--events .vertical-line:last-of-type {
+    display: none;
+  }
+  .bar--events p:last-child {
     display: none;
   }
 }
@@ -439,7 +449,7 @@ textarea {
   z-index: 1000;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .tile {
     max-width: none;
   }
@@ -454,7 +464,7 @@ textarea {
       align-self: center;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .tile__img {
     width: 100px;
     height: 100px;
@@ -585,14 +595,17 @@ textarea {
       grid-template-rows: 1fr 3fr auto;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .how-card__grid {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
+    -ms-grid-columns: minmax(200px, 700px);
+        grid-template-columns: minmax(200px, 700px);
     -ms-grid-rows: auto auto;
         grid-template-rows: auto auto;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     grid-row-gap: 2em;
   }
 }
@@ -613,7 +626,7 @@ textarea {
   transition: all 0.5s ease-in-out;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .how-card__grid .left {
     -ms-grid-row: 2;
     -ms-grid-row-span: 1;
@@ -640,7 +653,7 @@ textarea {
   transition: all 0.5s ease-in-out;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .how-card__grid .right {
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
@@ -684,7 +697,7 @@ textarea {
   padding: 4em 0;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .box {
     -webkit-transform: scale(1);
     transform: scale(1);
@@ -692,7 +705,7 @@ textarea {
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .box:last-child {
     margin-bottom: 0;
   }
@@ -709,7 +722,7 @@ textarea {
   transition: opacity 0.3s ease-in-out;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .box__header {
     opacity: 1;
   }
@@ -731,7 +744,7 @@ textarea {
   transition: opacity 0.3s ease-in-out;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .box__list {
     opacity: 1;
   }
@@ -744,7 +757,7 @@ textarea {
   text-align: center;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .box__list-item {
     padding-top: 1em;
     margin-bottom: 1em;
@@ -756,7 +769,7 @@ textarea {
   padding-bottom: 0.5em;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .box__list-item:last-child {
     padding-bottom: 1em;
   }
@@ -766,7 +779,7 @@ textarea {
   opacity: 0.8;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .box__button {
     opacity: 1;
   }
@@ -795,7 +808,7 @@ textarea {
   z-index: 2;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .box:nth-child(2) {
     -webkit-transform: scale(1);
     transform: scale(1);
@@ -833,7 +846,7 @@ textarea {
 @media (max-width: 550px) {
   .contact-tile {
     width: 100%;
-    padding: 3em 2em;
+    padding: 4em 2em;
   }
 }
 
@@ -861,7 +874,7 @@ textarea {
   margin-left: 1em;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .contact-tile:last-child {
     margin-left: 0;
     margin-top: 2em;
@@ -876,7 +889,7 @@ textarea {
   margin-right: 1em;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .contact-tile:first-child {
     margin-right: 0;
   }
@@ -1148,9 +1161,20 @@ textarea {
   margin-right: auto;
 }
 
+.main-nav__logo--no-text {
+  display: none;
+  margin-right: auto;
+}
+
+@media (max-width: 550px) {
+  .main-nav__logo--no-text {
+    display: block;
+  }
+}
+
 @media (max-width: 550px) {
   .main-nav__logo {
-    width: 200px;
+    display: none;
   }
 }
 
@@ -1174,14 +1198,15 @@ textarea {
   transition: width 0.2s ease-in-out;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .main-nav__list {
-    display: none;
-    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    opacity: 0;
     height: 0;
     background: white;
     z-index: 10;
@@ -1200,27 +1225,24 @@ textarea {
     align-items: center;
     -webkit-transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
     transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
   }
 }
 
-.main-nav__list.active {
-  min-height: 430px;
-}
-
-.main-nav__list.active .main-nav__logo-hamburger {
-  display: block;
-}
-
-.main-nav__list.active.show {
+.main-nav__list.show {
   height: 100%;
-  -webkit-transition: height 0.3s ease-in-out, opacity 0.2s ease-in-out;
-  transition: height 0.3s ease-in-out, opacity 0.2s ease-in-out;
+  -webkit-transition: height 0.3s ease-in-out;
+  transition: height 0.3s ease-in-out;
+}
+
+.main-nav__list.show .main-nav__logo-hamburger {
+  display: block;
 }
 
 .main-nav__logo-hamburger {
   display: none;
-  -webkit-transition: opacity 0.3s ease-in-out;
-  transition: opacity 0.3s ease-in-out;
+  height: 85px;
 }
 
 .main-nav__hamburger {
@@ -1230,7 +1252,7 @@ textarea {
   z-index: 9999;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .main-nav__hamburger {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1254,6 +1276,46 @@ textarea {
   transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
 }
 
 .main-nav__hamburger .hamburger-line-two {
@@ -1268,6 +1330,57 @@ textarea {
   transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+
+.main-nav__hamburger.active {
+  position: fixed;
+  right: 4em;
+}
+
+@media (max-width: 550px) {
+  .main-nav__hamburger.active {
+    right: 2em;
+  }
 }
 
 .main-nav__hamburger.active .hamburger-line-one {
@@ -1277,6 +1390,46 @@ textarea {
   transition: -webkit-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
 }
@@ -1295,6 +1448,46 @@ textarea {
   transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
 }
 
 header {
@@ -1310,6 +1503,7 @@ header {
   header {
     -ms-grid-columns: 4em 1fr 4em;
         grid-template-columns: 4em 1fr 4em;
+    position: relative;
   }
 }
 
@@ -1339,17 +1533,26 @@ header {
 @media (max-width: 850px) {
   .hero__text-content {
     position: static;
-    padding-bottom: 6em;
+    padding-bottom: 12em;
     padding-right: 4em;
-    max-width: 100%;
+  }
+  .hero__text-content p {
+    max-width: 500px;
   }
 }
 
 @media (max-width: 550px) {
   .hero__text-content {
+    padding: 8em 2em 10em 0;
+  }
+  .hero__text-content h1 {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 450px) {
+  .hero__text-content {
     text-align: center;
-    padding-bottom: 0;
-    padding-right: 2em;
   }
 }
 
@@ -1369,7 +1572,14 @@ header {
 
 @media (max-width: 850px) {
   .hero__img {
-    display: none;
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+@media (max-width: 550px) {
+  .hero__img {
+    height: 400px;
   }
 }
 
@@ -1401,13 +1611,14 @@ header {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    max-width: 200px;
-    margin: auto;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
     margin-top: 2em;
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .photobooth__container {
     position: relative;
   }
@@ -1417,9 +1628,9 @@ header {
   margin-left: 6em;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .photobooth__text {
-    margin-left: 0;
+    margin: 0 auto;
     max-width: 700px;
   }
 }
@@ -1430,25 +1641,26 @@ header {
   animation: photobooth 10s infinite ease-in-out;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .photobooth__img {
     position: absolute;
-    opacity: 0.2;
+    opacity: 0.1;
   }
 }
 
 @media (max-width: 850px) {
   .photobooth__img {
-    display: none;
+    height: 500px;
   }
 }
 
 .photobooth__header {
   -ms-flex-item-align: start;
   align-self: flex-start;
+  margin-top: 0;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .photobooth__header {
     text-align: right;
   }
@@ -1507,7 +1719,7 @@ header {
   justify-content: space-between;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .why__container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1524,7 +1736,7 @@ header {
   grid-gap: 50px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .why__tiles {
     width: 100%;
     -ms-grid-columns: 1fr 1fr;
@@ -1549,12 +1761,12 @@ header {
   width: 390px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .why__text {
     width: 100%;
     max-width: 700px;
     text-align: justify;
-    margin-right: 0;
+    margin: 0 auto;
   }
 }
 
@@ -1574,6 +1786,13 @@ header {
   -ms-grid-columns: 1fr minmax(300px, 1100px) minmax(4em, 1fr);
       grid-template-columns: 1fr minmax(300px, 1100px) minmax(4em, 1fr);
   margin-top: 6em;
+}
+
+@media (max-width: 850px) {
+  .how__bar-grid {
+    -ms-grid-columns: 1fr minmax(300px, 1100px) minmax(2em, 1fr);
+        grid-template-columns: 1fr minmax(300px, 1100px) minmax(2em, 1fr);
+  }
 }
 
 .how h2 {
@@ -1604,7 +1823,7 @@ header {
       grid-template-columns: 1fr 0.3fr 0.3fr 1fr 0.3fr 0.3fr 1fr;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .offer__boxes {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1662,7 +1881,7 @@ header {
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .gallery__container {
     -ms-grid-columns: auto auto;
         grid-template-columns: auto auto;
@@ -1691,7 +1910,7 @@ header {
   background: url("./../img/pattern-grey-lg.png");
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 4em;
+  padding: 5em 4em;
 }
 
 @media (max-width: 550px) {
@@ -1707,7 +1926,7 @@ header {
   margin: 4em auto;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1250px) {
   .contact__tiles {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

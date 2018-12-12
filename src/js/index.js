@@ -14,17 +14,9 @@ hamburgerBtn.addEventListener('click', ()=>{
 
 function toggleMenu() {
   if(hamburgerMenuOpened) {
-    hamburgerList.classList.add('active');
-
-    setTimeout(()=>{
-      hamburgerList.classList.add('show');
-    }, 100);
+    hamburgerList.classList.add('show');
   } else {
     hamburgerList.classList.remove('show');
-
-    setTimeout(()=>{
-      hamburgerList.classList.remove('active');
-    },300);
   }
 }
 
@@ -38,11 +30,7 @@ document.querySelectorAll('a').forEach(anchor => {
         document.querySelector(this.getAttribute('href')).scrollIntoView();
         hamburgerMenuOpened = !hamburgerMenuOpened;
         hamburgerList.classList.remove('show');
-
-        setTimeout(()=>{
-          hamburgerBtn.classList.remove('active');
-          hamburgerList.classList.remove('active');
-        },300);
+        hamburgerBtn.classList.remove('active');
 
       } else {
       navOverlay.classList.add('active');

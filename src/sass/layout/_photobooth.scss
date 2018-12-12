@@ -14,7 +14,7 @@
     margin-left: 6em;
 
     @include screen--large {
-      margin-left: 0;
+      margin: 0 auto;
       max-width: 700px;
     }
   }
@@ -26,17 +26,19 @@
 
     @include screen--large {
       position: absolute;
-      opacity: 0.2;
+      opacity: 0.1;
     }
 
     @include screen--medium {
-      display: none;
+      // display: none;
+      height: 500px;
     }
   }
 
   &__header {
     -ms-flex-item-align: start;
     align-self: flex-start;
+    margin-top: 0;
 
     @include screen--large {
       text-align: right;

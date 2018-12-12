@@ -8,8 +8,14 @@
       grid-column: 1/4;
     }
 
-    @include screen--small {
-      display: none;
+    @include screen--v-small {
+      .vertical-line:last-of-type {
+        display: none;
+      }
+
+      p:last-child {
+        display: none;
+      }
     }
   }
 
