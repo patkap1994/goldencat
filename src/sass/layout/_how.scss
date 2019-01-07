@@ -1,15 +1,16 @@
 .how {
   &__bar-grid {
     display: grid;
-    grid-template-columns: 1fr minmax(300px, 1100px) minmax(4em, 1fr);
+    grid-template-columns: minmax(2em, 1fr) minmax(300px, 1100px) minmax(
+        2em,
+        1fr
+      );
     margin-top: 6em;
-
-    @include screen--medium {
-      grid-template-columns: 1fr minmax(300px, 1100px) minmax(2em, 1fr);
-    }
+    // @include screen--medium {
+    // grid-template-columns: 1fr minmax(300px, 1100px) minmax(2em, 1fr);
+    // }
   }
-
-  h2 {
-    text-align: center;
+  h2.line--right {
+    text-align: right;
   }
 }

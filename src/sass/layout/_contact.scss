@@ -4,7 +4,7 @@
   background-size: cover;
   padding: 5em 4em;
 
-  @include screen--small {
+  @include screen--medium {
     padding: 4em 2em;
   }
 
@@ -14,7 +14,6 @@
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    margin: 4em auto;
 
     @include screen--large {
       -webkit-box-orient: vertical;

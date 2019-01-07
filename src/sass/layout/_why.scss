@@ -1,22 +1,8 @@
 .why {
-  &__container {
-    @extend %flex;
-
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-
-    @include screen--large {
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-      flex-direction: column;
-    }
-  }
-
   &__tiles {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     grid-gap: 50px;
 
     @include screen--large {
@@ -31,26 +17,6 @@
       grid-template-columns: 1fr;
       margin: 0 auto;
       margin-top: 4em;
-    }
-  }
-
-  &__text {
-    margin-right: 2em;
-    width: 390px;
-
-    @include screen--large {
-      width: 100%;
-      max-width: 700px;
-      text-align: justify;
-      margin: 0 auto;
-    }
-  }
-
-  &__header {
-    margin-top: 0;
-
-    @include screen--small {
-      text-align: center;
     }
   }
 }

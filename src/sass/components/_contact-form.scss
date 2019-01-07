@@ -1,7 +1,6 @@
 .contact-form {
   @include grid(50% 25% 25%, 1fr 5fr 1fr);
 
-  width: 100%;
   grid-row-gap: 2em;
 
   @include screen--medium {

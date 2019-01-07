@@ -27,9 +27,57 @@
     background: $primary-accent;
   }
 
-  &--tiles {
-    display: inline-block;
-    margin-top: 1em;
-    margin-right: 0.5em;
+  // &--tiles {
+  //   display: inline-block;
+  //   margin-top: 1em;
+  //   margin-right: 0.5em;
+  // }
+
+  &--up {
+    float: right;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: $primary-accent;
+    cursor: pointer;
+
+    .fas {
+      -webkit-animation: moveArrow 1s ease-in-out infinite;
+      animation: moveArrow 1s ease-in-out infinite;
+    }
+  }
+}
+
+@-webkit-keyframes moveArrow {
+  0% {
+    -webkit-transform: translateY(10%);
+    transform: translateY(10%);
+  }
+
+  50% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    -webkit-transform: translateY(10%);
+    transform: translateY(10%);
+  }
+}
+
+@keyframes moveArrow {
+  0% {
+    -webkit-transform: translateY(10%);
+    transform: translateY(10%);
+  }
+
+  50% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    -webkit-transform: translateY(10%);
+    transform: translateY(10%);
   }
 }

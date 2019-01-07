@@ -2,9 +2,7 @@
   &__container {
     @extend %flex;
 
-    @include screen--large {
-      position: relative;
-    }
+    position: relative;
   }
 
   &__text {
@@ -13,40 +11,48 @@
 
     margin-left: 6em;
 
-    @include screen--large {
-      margin: 0 auto;
-      max-width: 700px;
+    @include screen--medium {
+      margin-left: 0;
     }
+
+    // @include screen--large {
+    //   margin: 0 auto;
+    //   max-width: 700px;
+    // }
   }
 
   &__img {
-    height: 645px;
+    height: 640px;
     -webkit-animation: photobooth 10s infinite ease-in-out;
     animation: photobooth 10s infinite ease-in-out;
 
-    @include screen--large {
-      position: absolute;
-      opacity: 0.1;
-    }
+    // @include screen--large {
+    //   position: absolute;
+    //   opacity: 0.1;
+    // }
 
     @include screen--medium {
-      // display: none;
-      height: 500px;
+      position: absolute;
+      left: 0;
+      height: 400px;
+      opacity: 0.1;
     }
   }
 
   &__header {
-    -ms-flex-item-align: start;
-    align-self: flex-start;
-    margin-top: 0;
+    text-align: right;
 
-    @include screen--large {
-      text-align: right;
-    }
+    // -ms-flex-item-align: start;
+    // align-self: flex-start;
+    // margin-top: 0;
 
-    @include screen--small {
-      text-align: center;
-    }
+    // @include screen--large {
+    //   text-align: right;
+    // }
+
+    // @include screen--small {
+    //   text-align: center;
+    // }
   }
 
   &__paragraph {

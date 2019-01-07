@@ -5,16 +5,16 @@
     padding: 0 2em;
   }
 
-  h2 {
-    @include screen--small {
-      text-align: center;
-    }
-  }
+  // h2 {
+  //   @include screen--small {
+  //     text-align: center;
+  //   }
+  // }
 
   &__boxes {
     margin-top: 4em;
     display: grid;
-    grid-template-columns: 1fr 0.3fr 0.3fr 1fr 0.3fr 0.3fr 1fr;
+    grid-template-columns: repeat(6, 0.5fr);
 
     @include screen--large {
       display: -webkit-box;

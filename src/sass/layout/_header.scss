@@ -1,16 +1,16 @@
 header {
   display: grid;
-  grid-template-columns: minmax(4em, 1fr) minmax(300px, 1100px) 1fr;
-  padding-top: 5em;
-  margin: 0 auto;
+  grid-template-columns: minmax(4em, 1fr) minmax(300px, 1100px) minmax(4em, 1fr);
+  padding-top: 8em;
+  // margin: 0 auto;
 
-  @include screen--medium {
-    grid-template-columns: 4em 1fr 4em;
-    position: relative;
-  }
+  // @include screen--medium {
+  //   grid-template-columns: 4em 1fr 4em;
+  //   position: relative;
+  // }
 
   @include screen--small {
     grid-template-columns: 2em 1fr 2em;
-    padding-top: 0;
+    padding-top: 6em;
   }
 }
