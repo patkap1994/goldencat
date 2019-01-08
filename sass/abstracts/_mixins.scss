@@ -1,0 +1,46 @@
+//MEDIA QUERIES
+@mixin screen--v-large {
+  @media (max-width: #{$screen--v-large}) {
+    @content;
+  }
+}
+
+@mixin screen--large {
+  @media (max-width: #{$screen--large}) {
+    @content;
+  }
+}
+
+@mixin screen--medium {
+  @media (max-width: #{$screen--medium}) {
+    @content;
+  }
+}
+
+@mixin screen--small {
+  @media (max-width: #{$screen--small}) {
+    @content;
+  }
+}
+
+@mixin screen--v-small {
+  @media (max-width: #{$screen--v-small}) {
+    @content;
+  }
+}
+
+@mixin shadow($args...) {
+  -webkit-box-shadow: $args;
+  box-shadow: $args;
+}
+
+@mixin grid($x, $y) {
+  display: grid;
+  grid-template-columns: $x;
+  grid-template-rows: $y;
+}
+
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+  transform: $transform;
+}

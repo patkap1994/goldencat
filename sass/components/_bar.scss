@@ -1,0 +1,47 @@
+.bar {
+  @extend %shadow;
+
+  &--events {
+    grid-column: 2/4;
+
+    @include screen--medium {
+      grid-column: 1/4;
+    }
+
+    @include screen--v-small {
+      .vertical-line:last-of-type {
+        display: none;
+      }
+
+      p:last-child {
+        display: none;
+      }
+    }
+  }
+
+  &--how {
+    grid-column: 1/3;
+
+    @include screen--medium {
+      grid-column: 1/4;
+    }
+  }
+
+  &--right {
+    margin-left: auto;
+  }
+
+  &-wrapper {
+    @extend %flex;
+    @extend %flex-align;
+
+    @include screen--small {
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__paragraph {
+    margin: 1.5em auto;
+  }
+}
