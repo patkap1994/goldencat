@@ -160,6 +160,7 @@
     @extend %relative;
     @extend %flex;
     @extend %flex-align;
+    @extend %flex-justify;
 
     width: 100%;
     min-height: 100%;

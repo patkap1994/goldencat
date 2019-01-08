@@ -9,7 +9,7 @@
   display: flex;
 }
 
-.header--centered {
+.header--centered, .gallery-overlay__container {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
