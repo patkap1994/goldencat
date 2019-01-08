@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="format-detection" content="telephone=no">
+    <meta name="Description" content="Strona internetowa Golden Cat Fotobudki - najlepszej fotobudki na imprezę z płynną regulacją pochylenia korpusu.">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;subset=latin-ext" rel="stylesheet">
     <link
       rel="stylesheet"
@@ -31,11 +32,11 @@
         height="65px"
       />
       <ul class="main-nav__list">
-        <img
+        <li><img
           class="main-nav__logo-hamburger"
           src="img/icons/logo-column-black.svg"
           alt="Logo of Golden Cat Fotobudka"
-        />
+        /></li>
         <li class="main-nav__list-item">
           <a
             class="paragraph-basic paragraph-basic--medium"
@@ -619,6 +620,7 @@ W zależności od wybranego pakietu dodatkowo oferujemy pamiątkowy album, do kt
           </p>
           <a href="https://www.facebook.com/fotobudkagoldencat/"
           target="_blank"
+          rel="noopener"
             ><img
               src="./img/icons/facebook.svg"
               alt="Facebook icon"
@@ -631,6 +633,7 @@ W zależności od wybranego pakietu dodatkowo oferujemy pamiątkowy album, do kt
           </p>
           <a href="https://www.instagram.com/fotobudka_goldencat/"
           target="_blank"
+          rel="noopener"
             ><img
               src="./img/icons/instagram.svg"
               alt="Instagram icon"
@@ -645,6 +648,7 @@ W zależności od wybranego pakietu dodatkowo oferujemy pamiątkowy album, do kt
             class="contact-form__mail"
             placeholder="Tu wpisz swój adres e-mail"
             name="e-mail"
+            aria-label="E-mail input"
           />
           <textarea
             name="message"
@@ -654,12 +658,14 @@ W zależności od wybranego pakietu dodatkowo oferujemy pamiątkowy album, do kt
             class="contact-form__message"
             placeholder="Tu wpisz swoje pytanie"
             name="message"
+            aria-label="Message input"
           ></textarea>
           <input
             type="submit"
             class="contact-form__btn btn btn--accent header-font header-font--medium text-light"
             value="Wyślij"
             name="submit"
+            aria-label="Send message"
           >
         </form>
       </div>
@@ -671,7 +677,7 @@ W zależności od wybranego pakietu dodatkowo oferujemy pamiątkowy album, do kt
           class="footer__logo"
         />
       </footer>
-      <button class="btn--up"><i class="fas fa-arrow-up"></i></button>
+      <button aria-label="Go up" class="btn--up"><i class="fas fa-arrow-up"></i></button>
     </section>
 
 
